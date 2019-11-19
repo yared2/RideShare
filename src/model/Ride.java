@@ -1,16 +1,18 @@
 package model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 public class Ride 
 {
 	
-	private LocalDate date;
+	private int id;
+	private String date;
 	private String origin;
 	private String destination;
 	private double fare;
-	private LocalTime time;
+	private String time;
+	private int user;
+	private String message;
 	
 	
 	
@@ -21,27 +23,21 @@ public class Ride
 
 
 
-	public Ride(LocalDate date, String origin, String destination, double fare, LocalTime time) {
+	public Ride(int id,String date, String origin, String destination, double fare, String time,int user,String message) {
 		super();
 		this.date = date;
 		this.origin = origin;
 		this.destination = destination;
 		this.fare = fare;
 		this.time = time;
+		this.id = id;
+		this.message = message;
+		this.user = user;
 	}
 
 
 
-	public LocalDate getDate() {
-		return date;
-	}
-
-
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
+	
 
 
 	public String getOrigin() {
@@ -80,14 +76,63 @@ public class Ride
 
 
 
-	public LocalTime getTime() {
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+
+	public String getTime() {
 		return time;
 	}
 
 
 
-	public void setTime(LocalTime time) {
+	public void setTime(String time) {
 		this.time = time;
+	}
+
+
+
+	public int getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(int user) {
+		this.user = user;
+	}
+
+
+
+	public String getMessage() {
+		return message;
+	}
+
+
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 	
