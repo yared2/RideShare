@@ -62,7 +62,7 @@ public class RideDao
 		User data = null;
 		try {
             Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("SELECT id, username, password, phone, firstname , lastname  FROM `ridesharedb`.users WHERE  id ='"+uniqueid+"'");                                                                 
+            PreparedStatement pstmt = connection.prepareStatement("SELECT id, username, password, phone, firstname , lastname, role  FROM `ridesharedb`.users WHERE  id ='"+uniqueid+"'");                                                                 
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()) {
                 int id = rs.getInt("id");
@@ -71,7 +71,8 @@ public class RideDao
                 String phone = rs.getString("phone");
                 String firstname = rs.getString("firstname");
                 String lastname = rs.getString("lastname");
-                data = new User(id,username,password,phone,firstname,lastname);
+                String role = rs.getString("role");
+                data = new User(id,username,password,phone,firstname,lastname,role);
             }
         } catch (SQLException e) {
             System.err.println(e);

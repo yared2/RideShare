@@ -11,7 +11,7 @@ public class User
 	private String role;
 	
 	
-	public User(int id, String username, String password, String phone, String firstname, String lastname) {
+	public User(int id, String username, String password, String phone, String firstname, String lastname,String role) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -19,6 +19,7 @@ public class User
 		this.phone = phone;
 		this.firstname = firstname;
 		this.lastname = lastname;
+		this.role = role;
 	}
 
 
