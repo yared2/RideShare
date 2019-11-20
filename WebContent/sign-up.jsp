@@ -77,7 +77,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="firstname">Last Name</label>
-          <input type="text" class="form-control" name="lasttname" id="lastname" placeholder="e.g Gebrekidan " required>
+          <input type="text" class="form-control" name="lastname" id="lastname" placeholder="e.g Gebrekidan " required>
         </div>
         <div class="form-group col-md-6">
           <label for="phone">Telephone</label>

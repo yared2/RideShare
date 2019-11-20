@@ -54,7 +54,6 @@ public class SignupServlet extends HttpServlet
 		String firstname = req.getParameter("firstname");
 		String lastname = req.getParameter("lastname");
 		String phone = req.getParameter("phone");
-		String date = req.getParameter("date");
 		String role = req.getParameter("role");
 		
 		String finalrole = "";
