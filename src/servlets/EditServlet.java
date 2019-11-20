@@ -12,55 +12,59 @@ import javax.servlet.http.HttpServletResponse;
 import daos.RideDao;
 import model.Ride;
 
-
-@WebServlet(name = "NewPostServlet" , urlPatterns={"/newpost"})
-public class NewPostServlet extends HttpServlet
+@WebServlet(name = "EditServlet" , urlPatterns={"/edit"})
+public class EditServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
 	private RideDao dao;
 	
-	public NewPostServlet()
+	public EditServlet()
 	{
 		this.dao = new RideDao();
 	}
-	
 	
 	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{		
-		doPost(req,resp);		
+		String id = req.getParameter("id");
+		
+		Ride ride = dao.getRide(Integer.parseInt(id));
+		req.setAttribute("ride", ride);
+		
+
+		RequestDispatcher dispacher = req.getRequestDispatcher("edit.jsp");
+		dispacher.forward(req, resp);
+		
 	}	
 	
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
+		String id = req.getParameter("id");
 		String date = req.getParameter("date");
 		String origin = req.getParameter("origin");
 		String destination = req.getParameter("destination");
 		String time = req.getParameter("time");
 		String fare = req.getParameter("fare");
 		String message = req.getParameter("message");
-		String user = req.getSession().getAttribute("username").toString();
-		int driverid = dao.getUserByUserName(user).getId();
+		String user = req.getParameter("user");
 		
+		int rideid = Integer.parseInt(id);
 		double ridefair = Double.parseDouble(fare);
+		int ridedriver = Integer.parseInt(user);
 		
-		Ride ride = new Ride(100,date,origin,destination,ridefair,time,driverid,message);
+		Ride ride = new Ride(rideid,date,origin,destination,ridefair,time,ridedriver,message);
 		
-		dao.saveRide(ride);
+		dao.updateRide(ride);
 		
+		RequestDispatcher dispacher = req.getRequestDispatcher("/postlist");
+		dispacher.forward(req, resp);
 		
-		
-		
-		
-
-			RequestDispatcher dispacher = req.getRequestDispatcher("/postlist");
-			dispacher.forward(req, resp);
-
+			
 
 	}
 	

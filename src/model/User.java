@@ -81,6 +81,16 @@ public class User
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	
 	

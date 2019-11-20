@@ -10,21 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import daos.RideDao;
-import model.Ride;
 
 
-@WebServlet(name = "NewPostServlet" , urlPatterns={"/newpost"})
-public class NewPostServlet extends HttpServlet
+@WebServlet(name = "DeleteServlet" , urlPatterns={"/delete"})
+public class DeleteServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
 	private RideDao dao;
 	
-	public NewPostServlet()
+	public DeleteServlet()
 	{
 		this.dao = new RideDao();
 	}
-	
 	
 	
 
@@ -38,25 +36,10 @@ public class NewPostServlet extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		String date = req.getParameter("date");
-		String origin = req.getParameter("origin");
-		String destination = req.getParameter("destination");
-		String time = req.getParameter("time");
-		String fare = req.getParameter("fare");
-		String message = req.getParameter("message");
-		String user = req.getSession().getAttribute("username").toString();
-		int driverid = dao.getUserByUserName(user).getId();
 		
-		double ridefair = Double.parseDouble(fare);
-		
-		Ride ride = new Ride(100,date,origin,destination,ridefair,time,driverid,message);
-		
-		dao.saveRide(ride);
-		
-		
-		
-		
-		
+			String id = req.getParameter("id");
+			
+			dao.deleteRide(Integer.parseInt(id));
 
 			RequestDispatcher dispacher = req.getRequestDispatcher("/postlist");
 			dispacher.forward(req, resp);

@@ -32,6 +32,7 @@ public class DetailServlet extends HttpServlet
 	{
 		
 		String id = req.getParameter("id");
+		req.setAttribute("id",id);
 		
 		Integer uniqueid = Integer.parseInt(id);
 		

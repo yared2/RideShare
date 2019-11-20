@@ -16,10 +16,7 @@ public class Ride
 	
 	
 	
-	public Ride()
-	{
-		
-	}
+
 
 
 

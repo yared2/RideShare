@@ -6,7 +6,7 @@
             type="javax.sql.DataSource"
             maxTotal="10"
             maxIdle="30"
-            maxWaitMillis="10000"
+            maxWaitMillis="20000"
             driverClassName="com.mysql.cj.jdbc.Driver"
             url="jdbc:mysql://localhost:3306/ridesharedb"
             username="root"

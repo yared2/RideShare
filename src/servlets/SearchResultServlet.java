@@ -32,7 +32,7 @@ public class SearchResultServlet extends HttpServlet
 		
 		System.out.println(date + " " + origin + " " + destination);
 		
-		req.setAttribute("results", dao.getSearchedRides(origin,destination,date));  // the serach results added
+		req.setAttribute("results", dao.getSearchedRides(origin,destination,date));  // the search results added
 		
 		RequestDispatcher dispacher = req.getRequestDispatcher("result.jsp");
 		dispacher.forward(req, resp);		

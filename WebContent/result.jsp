@@ -34,13 +34,11 @@
 <!--                border-left: white 3px solid;-->
 
                 <li class="nav-item" style=" padding-left: 4em; padding-right: 2em;">
-                    <span style="color:yellow; padding-left: 2em; padding-right: 1em;">Search Results!</span>
+                    <span style="color:yellow; padding-left: 2em; padding-right: 1em;  font-size:1.5em">Search Results!</span>
                 </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-
-                <a href="#" class="btn btn-success btn-lg" type="button">LogIn</a>
 
                 <a href="#" class="btn btn-success btn-lg" type="button">SignUp !</a>
 
