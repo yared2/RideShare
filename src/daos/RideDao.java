@@ -53,6 +53,7 @@ public class RideDao
             }
             
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -68,6 +69,7 @@ public class RideDao
             PreparedStatement pstmt = connection.prepareStatement("UPDATE  `ridesharedb`.rides SET origin='"+ride.getOrigin()+"' , destination='"+ride.getDestination()+"' , date='"+ride.getDate()+"' , time='"+ride.getTime()+"' , fare='"+ride.getFare()+"' , message='"+ride.getMessage()+"' , user='"+ride.getUser()+"' WHERE  id ='"+ride.getId()+"'");                                                                 
             pstmt.executeUpdate();
             pstmt.close(); 
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -81,6 +83,7 @@ public class RideDao
             PreparedStatement pstmt = connection.prepareStatement("DELETE FROM `ridesharedb`.rides WHERE  id ='"+id+"'");                                                                 
             pstmt.executeUpdate();
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -114,6 +117,7 @@ public class RideDao
                 data = new User(id,username,password,phone,firstname,lastname,role);
             }
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -145,6 +149,7 @@ public class RideDao
                 data = new User(id,username,password,phone,firstname,lastname,role);
             }
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -179,6 +184,7 @@ public class RideDao
                 result.add(data);
             }
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -202,6 +208,7 @@ public class RideDao
             pstmt.setString(7, ride.getMessage());
             pstmt.executeUpdate();
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }		
@@ -218,6 +225,7 @@ public class RideDao
             pstmt.setInt(2, customerid);
             pstmt.executeUpdate();
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }	
@@ -240,6 +248,7 @@ public class RideDao
             pstmt.setString(6, user.getRole());
             pstmt.executeUpdate();
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }		
@@ -269,6 +278,7 @@ public class RideDao
                 result.add(data);
             }
             pstmt.close();
+            connection.close();
         } catch (SQLException e) {
             System.err.println(e);
         }
@@ -315,6 +325,7 @@ public class RideDao
             }
             
             pstmt.close();
+            connection.close();
             
             
         } catch (SQLException e) {

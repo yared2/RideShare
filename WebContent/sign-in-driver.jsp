@@ -63,9 +63,17 @@
     </nav>
 
 </div>
+
   <h3 style="text-align:center;"></h3>
     <form action="signindriver" method="post" id="body">
-        <div class="form-row">
+    
+    
+    <c:if test = "${!empty error}">
+    	<h3 style = "color:red">Username or Password is Incorrect!</h3>
+    	</c:if>
+    
+    
+        <div class="form-row">        
           <div class="form-group col-md-6">
             <label for="username">User Name</label>
             <input type="email" class="form-control" name="username" id="username" placeholder="example@gmail.com" required>

@@ -37,6 +37,7 @@ public class SigninCustomerServlet extends HttpServlet     // for the customer
 		
 		if(dao.registered(username, password))
 		{
+			req.setAttribute("error", null);  // additional error
 			HttpSession session = req.getSession(true);
 			session.setAttribute("authenticated", "yes");
 			session.setAttribute("authenticatedusername", req.getParameter("username"));

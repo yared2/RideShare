@@ -66,6 +66,17 @@
 	<input type ="hidden" value = "${email}" name = "email"/>
     
     
+    
+    <c:if test = "${!empty error}">
+    <h3 style = "color:red">Username or Password is Incorrect!</h3>
+    </c:if>
+    
+    
+    
+    
+    
+    
+    
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="username">User Name</label>
