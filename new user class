@@ -1,0 +1,49 @@
+package servlets;
+//  this page adding new user it can be driver or customer (role) 
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import daos.RideDao;
+import model.user;
+
+@WebServlet("/newcustomer")
+public class newcustomer extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public newcustomer() {
+        super();
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		int id= Integer.parseInt(request.getParameter("id"));
+		String username = request.getParameter("userName");
+		String password= request.getParameter("password");
+		String phone= request.getParameter("phone");
+		String fname=request.getParameter("fname");
+		String lname=request.getParameter("lname");
+		String role= request.getParameter("role");
+		
+user newUser =new user(id,username,password,phone,fname, lname,role) ;
+
+RideDao data=new RideDao();
+
+data.saveUser(newUser);
+
+	}
+
+}
+
+
+
+
+
+
