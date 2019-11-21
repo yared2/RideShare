@@ -81,7 +81,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="phone">Telephone</label>
-          <input type="text" class="form-control" name="phone" id="phone" placeholder="210-980-5544 " required>
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="2109805544 " pattern = "^[0-9]{10}$" required>
         </div>
         </div>
         <div class="form-group">
